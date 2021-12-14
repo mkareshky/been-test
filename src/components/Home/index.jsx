@@ -27,7 +27,7 @@ function Home() {
     const [openList, setOpenList] = useState(false);
     const handleOpen = (e) => { e.stopPropagation(); setOpen(true); }
     const handleClose = () => setOpen(false);
-    const handleOpenList = () => (task.length > 0) ? setOpenList(true) : setOpenList(false);
+    const handleOpenList = () => (task.filter(x => x.done === true).length > 0) ? setOpenList(true) : setOpenList(false);
     const handleCloseList = () => setOpenList(false);
     return (
         <div className="Wrapper">
