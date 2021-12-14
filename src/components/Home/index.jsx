@@ -25,7 +25,7 @@ function Home() {
     const [task,] = useContext(TaskContext);
     const [open, setOpen] = useState(false);
     const [openList, setOpenList] = useState(false);
-    const handleOpen = (e) => { setOpen(true); e.stopPropagation(); }
+    const handleOpen = (e) => { e.stopPropagation(); setOpen(true); }
     const handleClose = () => setOpen(false);
     const handleOpenList = () => (task.length > 0) ? setOpenList(true) : setOpenList(false);
     const handleCloseList = () => setOpenList(false);

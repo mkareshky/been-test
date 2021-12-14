@@ -28,18 +28,18 @@ function Item(props) {
                     ? { ...item, done: true }
                     : item
             ));
-        handleClose();
+        handleCloseEdit();
     }
 
-    const [open, setOpen] = useState(false);
-    const handleOpen = (e) => { setOpen(true); e.stopPropagation(); }
-    const handleClose = () => setOpen(false);
+    const [openEdit, setOpenEdit] = useState(false);
+    const handleOpenEdit = (e) => { e.stopPropagation(); setOpenEdit(true); };
+    const handleCloseEdit = () => setOpenEdit(false);
     const [openDetails, setOpenDetails] = useState(false);
-    const handleOpenDetails = (e) => { setOpenDetails(true); e.stopPropagation(); }
+    const handleOpenDetails = (e) => { e.stopPropagation(); openEdit ? setOpenDetails(false) : setOpenDetails(true); };
     const handleCloseDetails = () => setOpenDetails(false);
     return (
-        <div className="Container" key={props.item.title}  onClick={(e) => handleOpenDetails(e)}>
-            <div className="Box">
+        <div className="Container" key={props.item.title}>
+            <div className="Box" onClick={(e) => handleOpenDetails(e)}>
                 <div className="LeftColumn" >
                     <div className="ItemWrapper">
                         <p className="ItemTitle">{props.item.title.substr(0, 25) + '...'}</p>
@@ -55,15 +55,15 @@ function Item(props) {
                     </div>
                     <div className="ItemWrapper" style={(props.item.done) ? { display: 'none' } : { display: 'block' }} >
                         <Button onClick={() => handleDone(props.item.id)} style={{ margin: '0 0.5rem', backgroundColor: 'orange' }} variant="contained">Done Task</Button>
-                        <Button className="ButtonFlex" onClick={(e) => handleOpen(e)} style={{ margin: '0 0.5rem' }} variant="contained" color="success">Edit </Button>
+                        <Button className="ButtonFlex" onClick={(e) => handleOpenEdit(e)} style={{ margin: '0 0.5rem' }} variant="contained" color="success">Edit </Button>
                         <Modal
-                            open={open}
-                            onClose={handleClose}
+                            open={openEdit}
+                            onClose={handleCloseEdit}
                             aria-labelledby="modal-modal-title"
                             aria-describedby="modal-modal-description"
                         >
                             <Box sx={style} className="Modal">
-                                <FormPage onCloseModal={handleClose} item={props.item} />
+                                <FormPage onCloseModal={handleCloseEdit} item={props.item} />
                             </Box>
                         </Modal>
                         <Modal
