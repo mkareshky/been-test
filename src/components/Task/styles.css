@@ -1,0 +1,45 @@
+.Container {
+    padding: 2rem;
+}
+
+.BoxItem {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    border: gray 2px solid;
+    border-radius: 1rem;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.ItemTitle {
+    font-weight: bold;
+}
+
+.dot {
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0.5rem 0.6rem;
+}
+
+.ItemContainer {
+    margin: 0 6rem;
+}
+
+.ButtonsContainer {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    justify-content: space-between;
+    margin: 5rem 0.5rem 0.5rem 0.5rem;
+    width: 100%;
+}
+
+.ButtonFlex {
+    width: 20%;
+    white-space: nowrap;
+}

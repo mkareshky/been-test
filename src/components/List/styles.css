@@ -1,0 +1,53 @@
+.Container {
+    padding: 2rem;
+}
+
+.Box {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: left;
+    border: gray 2px solid;
+    border-radius: 1rem;
+    justify-content: space-between;
+}
+
+.LeftColumn {
+    width: 35%;
+    text-align: left;
+    padding: 1rem;
+}
+
+.RightColumn {
+    width: 50%;
+    text-align: right;
+    padding: 1rem;
+}
+
+.ItemWrapper {
+    padding: 0 0.5rem;
+}
+
+.ItemTitle {
+    font-weight: bold;
+    margin: 0;
+}
+
+.dot {
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0.5rem 0.6rem;
+}
+
+.RightBottom {
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.LeftBottom {
+    text-align: Left;
+    padding-left: 2rem;
+}
