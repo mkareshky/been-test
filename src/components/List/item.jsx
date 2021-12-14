@@ -38,7 +38,7 @@ function Item(props) {
     const handleOpenDetails = (e) => { setOpenDetails(true); e.stopPropagation(); }
     const handleCloseDetails = () => setOpenDetails(false);
     return (
-        <div className="Container" key={props.item.title}>
+        <div className="Container" key={props.item.title}  onClick={(e) => handleOpenDetails(e)}>
             <div className="Box">
                 <div className="LeftColumn" >
                     <div className="ItemWrapper">
